@@ -22,7 +22,7 @@ export default async function HeroSection({
           {/* Launch Your Site */}
           <div className=" lg:w-[662px] flex flex-col lg:items-start text-white">
             <Image
-              src="/dashcruise_logo_edited_w_280.webp"
+              src="https://cdn.codeopx.com/des.png"
               sizes="280px"
               width={280}
               height={280}

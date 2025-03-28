@@ -46,7 +46,7 @@ export default function HighlightSection({
             </div>
             <div className="mt-6 highlight-image-custom overflow-hidden relative">
               <Image
-                src="/coding_2.jpg"
+                src="https://cdn.codeopx.com/des2.png"
                 objectFit="cover"
                 layout="fill"
                 sizes="200px"
@@ -57,7 +57,7 @@ export default function HighlightSection({
           <div className="self-start">
             <div className="highlight-image-custom relative overflow-hidden">
               <Image
-                src="/hardware.webp"
+                src="https://cdn.codeopx.com/des2.png"
                 objectFit="cover"
                 layout="fill"
                 sizes="200px"
@@ -66,7 +66,7 @@ export default function HighlightSection({
             </div>
             <div className="highlight-image-custom relative overflow-hidden">
               <Image
-                src="/programmer.webp"
+                src="https://cdn.codeopx.com/des2.png"
                 objectFit="cover"
                 layout="fill"
                 sizes="200px"

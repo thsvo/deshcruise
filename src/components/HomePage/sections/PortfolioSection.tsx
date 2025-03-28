@@ -21,7 +21,7 @@ export default function PortfolioSection({
           <div className="lg:mt-0 highlight-container-custom">
             <div className="lg:w-[400px] lg:h-[400px] rounded-2xl object-cover w-[200px] h-[200px] mx-auto">
               <Image
-                src="/programmer.webp"
+                src="https://cdn.codeopx.com/des1.png"
                 layout="fill"
                 objectFit="cover"
                 alt="portfolio image"
@@ -38,7 +38,7 @@ export default function PortfolioSection({
           <div className="highlight-container-custom">
             <div className="lg:w-[400px] lg:h-[400px] rounded-2xl object-cover w-[200px] h-[200px] mx-auto">
               <Image
-                src="/programmer.webp"
+                src="https://cdn.codeopx.com/des2.png"
                 layout="fill"
                 objectFit="cover"
                 alt="portfolio image"
@@ -55,7 +55,7 @@ export default function PortfolioSection({
           <div className="highlight-container-custom">
             <div className="lg:w-[400px] lg:h-[400px] rounded-2xl object-cover w-[200px] h-[200px] mx-auto">
               <Image
-                src="/programmer.webp"
+                src="https://cdn.codeopx.com/des3.png"
                 layout="fill"
                 objectFit="cover"
                 alt="portfolio image"
