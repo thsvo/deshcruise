@@ -1,7 +1,6 @@
 import Image from "next/image";
 import ExclusivePlan from "@/components/HomePage/ExclusivePlan";
 
-
 export default async function HeroSection({
   lg_screen_width,
   default_screen_width,
@@ -27,6 +26,7 @@ export default async function HeroSection({
               width={280}
               height={280}
               alt="logo"
+              decoding="async"
               priority
               fetchPriority="high"
               className="lg:mt-0 bg-blue-50 p-10 rounded-2xl mx-auto mt-5"

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-page-custom-font */
 import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
@@ -39,12 +40,13 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
-        <link rel="icon" href="/favicon.ico"/>
+        <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon.io" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
+        <link  rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
         <link
+          rel="preload"
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap"
-          rel="stylesheet"
+          as="style"
         />
       </head>
       <body className={` antialiased`}>
