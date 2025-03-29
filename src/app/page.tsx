@@ -1,6 +1,9 @@
 import dynamic from 'next/dynamic';
 import HeroSection from "@/components/HomePage/sections/HeroSection";
 import ClientOnly from "@/components/ClientOnly";
+import ClientQAWrapper from "@/components/ClientWrappers/ClientQAWrapper";
+import ClientContactUsWrapper from "@/components/ClientWrappers/ClientContactUsWrapper";
+import ClientMeetingSchedule from "@/components/ClientWrappers/ClientMeetingSchedule";
 
 // Lazy load components with improved loading states and priority
 const ComparisonSection = dynamic(() => import("@/components/HomePage/sections/ComparisonSection"), {
@@ -13,23 +16,6 @@ const HighlightSection = dynamic(() => import("@/components/HomePage/sections/Hi
 
 const PricingSection = dynamic(() => import("@/components/HomePage/sections/PricingSection"), {
   loading: () => <div className="w-full h-[400px] bg-gray-100 animate-pulse"></div>
-});
-
-// Dynamically import client components with increased delay
-const QAWrapper = dynamic(() => import("@/components/HomePage/sections/QA/QAWrapper"), {
-  ssr: false,
-  loading: () => <div className="w-full h-[300px] bg-gray-100 animate-pulse"></div>
-});
-
-const ContactUsWrapper = dynamic(() => import("@/components/HomePage/sections/ContactUs/ContactUsWrapper"), {
-  ssr: false,
-  loading: () => <div className="w-full h-[300px] bg-gray-100 animate-pulse"></div>
-});
-
-// Dynamically import MeetingSchedule with ssr disabled and increased delay
-const MeetingSchedule = dynamic(() => import("@/components/HomePage/MeetingSchedule"), {
-  ssr: false,
-  loading: () => <div className="w-full h-[600px] bg-gray-100 animate-pulse"></div>
 });
 
 export default function Home() {
@@ -59,15 +45,15 @@ export default function Home() {
       
       {/* Load below-the-fold content with lower priority */}
       <ClientOnly>
-        <QAWrapper
+        <ClientQAWrapper
           lg_screen_width={lg_screen_width}
           default_screen_width={default_screen_width}
         />
-        <ContactUsWrapper
+        <ClientContactUsWrapper
           lg_screen_width={lg_screen_width}
           default_screen_width={default_screen_width}
         />
-        <MeetingSchedule />
+        <ClientMeetingSchedule />
       </ClientOnly>
       
       <PricingSection

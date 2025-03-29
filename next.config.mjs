@@ -6,10 +6,10 @@ const nextConfig = {
   images: {
     domains: ['cdn.codeopx.com', 'lh3.googleusercontent.com'],
     formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 60,
   },
   experimental: {
-    optimizeCss: true,
+    // Disable optimizeCss until critters issues are resolved
+    optimizeCss: false,
     optimizePackageImports: ['@fortawesome/fontawesome-svg-core'],
   },
   compiler: {

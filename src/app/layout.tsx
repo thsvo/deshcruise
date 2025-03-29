@@ -7,15 +7,13 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { ConsentProvider } from "@/context/ConsentContext";
 import { Plus_Jakarta_Sans } from 'next/font/google';
+import ClientScriptLoader from "@/components/ClientScriptLoader";
 
 // Lazy load NavBar to reduce initial bundle size
 const NavBar = dynamic(() => import("@/components/NavBar"), {
   ssr: true,
   loading: () => <div className="w-full h-[98px] bg-black"></div>
 });
-
-// Lazy load non-critical components
-const DeferredScriptLoader = dynamic(() => import("@/components/DeferredScriptLoader"), { ssr: false });
 
 config.autoAddCss = false;
 
@@ -75,7 +73,7 @@ export default function RootLayout({
             default_screen_width={default_screen_width}
           />
           {children}
-          <DeferredScriptLoader />
+          <ClientScriptLoader />
         </ConsentProvider>
       </body>
     </html>

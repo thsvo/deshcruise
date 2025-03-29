@@ -19,6 +19,7 @@
     "@stripe/stripe-js": "^6.1.0",
     "@vercel/next": "^4.7.4",
     "axios": "^1.8.3",
+    "critters": "^0.0.23",
     "js-cookie": "^3.0.5",
     "micro": "^10.0.1",
     "micro-cors": "^0.1.1",
