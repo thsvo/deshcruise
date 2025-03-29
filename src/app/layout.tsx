@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import type { Metadata } from "next";
 import "./globals.css";
-import Script from "next/script";
+
 import dynamic from "next/dynamic";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
