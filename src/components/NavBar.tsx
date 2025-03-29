@@ -1,6 +1,5 @@
 "use client"
 
-import { MenuItemsData } from "@/data/MenuItemsData";
 import { useRouter, usePathname } from "next/navigation";
 
 export default function NavBar({
@@ -11,9 +10,8 @@ export default function NavBar({
   default_screen_width: string;
 }) {
 
-  const router = useRouter();
-  const pathname = usePathname();
-  // Remove console.log statements
+
+
   return (
     <div className="bg-black w-screen flex justify-center">
       <nav
