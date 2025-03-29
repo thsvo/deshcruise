@@ -1,7 +1,8 @@
+"use client"; // Add this to make it a client component
+
 import Image from "next/image";
 
 export default function MeetingSchedule() {
-  
   return (
     <div style={{ maxWidth: "max-content" }} className="text-center mx-auto">
       <a
@@ -21,8 +22,7 @@ export default function MeetingSchedule() {
           </div>
         </div>
       </a>
-      <div className="rounded-xl bg-carrot-300 rounded-t-none">
-
+      <div className="rounded-xl bg-carrot-300 rounded-t-none" id="calendar-container">
         <iframe
           src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3ts-5A-akJnclu6mwaWaqGKpGVy9SsseHM5ZrAEZf9VW-67BHmKht6l5R5aH0QkAsqCUmuQ13R?gv=true"
           className="border-0"
@@ -31,8 +31,10 @@ export default function MeetingSchedule() {
           loading="lazy"
           title="Schedule Google Meeting"
           frameBorder="0"
+          onLoad={() => {
+            document.getElementById('calendar-container')?.classList.add('loaded');
+          }}
         ></iframe>
-
       </div>
     </div>
   );

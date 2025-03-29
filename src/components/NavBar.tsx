@@ -12,10 +12,8 @@ export default function NavBar({
 }) {
 
   const router = useRouter();
-  console.log(router);
-  console.log(usePathname());
-  console.log(MenuItemsData);
-
+  const pathname = usePathname();
+  // Remove console.log statements
   return (
     <div className="bg-black w-screen flex justify-center">
       <nav

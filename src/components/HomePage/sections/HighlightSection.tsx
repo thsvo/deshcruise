@@ -29,7 +29,15 @@ export default function HighlightSection({
             </p>
           </div>
           <div className="lg:mx-0 lg:mb-0 w-[300px] h-[200px] mb-10 mx-auto relative">
-            <Image src="/Cloudflare_Logo.png" sizes="200px" layout="fill" objectFit="contain" alt="cloudflare logo" />
+            <Image 
+              src="/Cloudflare_Logo.png" 
+              sizes="200px" 
+              layout="fill" 
+              objectFit="contain" 
+              alt="cloudflare logo"
+              priority={true} // Add priority for above-the-fold images
+              loading="eager" // Load important images eagerly
+            />
           </div>
         </div>
         {/* Highlight Images */}

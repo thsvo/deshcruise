@@ -48,20 +48,24 @@ export default function ContactUsSection({
           <form
             onSubmit={async (e) => {
               e.preventDefault();
+              if (pending) return; // Prevent multiple submissions
               setPending(true);
 
               const formData = new FormData(e.currentTarget);
-
-              const result = await handleFormSubmition(formData);
-              setPending(false);
-              if (result?.success) {
-                setShowPopup(true);
-                console.log("Setting show popup to true");
-                setFormValues({ name: "", email: "", message: "" });
-                setTimeout(() => setShowPopup(false), 3000);
-              } else if (result?.error) {
-                console.error("Validation or server error:", result.error);
-                // You could also show a toast or inline error here
+              
+              try {
+                const result = await handleFormSubmition(formData);
+                if (result?.success) {
+                  setShowPopup(true);
+                  setFormValues({ name: "", email: "", message: "" });
+                  setTimeout(() => setShowPopup(false), 3000);
+                } else if (result?.error) {
+                  console.error("Validation or server error:", result.error);
+                }
+              } catch (error) {
+                console.error("Form submission error:", error);
+              } finally {
+                setPending(false);
               }
             }}
             className="flex flex-col p-10"
