@@ -3,7 +3,7 @@ import HeroSection from "@/components/HomePage/sections/HeroSection";
 import ClientOnly from "@/components/ClientOnly";
 import ClientQAWrapper from "@/components/ClientWrappers/ClientQAWrapper";
 import ClientContactUsWrapper from "@/components/ClientWrappers/ClientContactUsWrapper";
-import ClientMeetingSchedule from "@/components/ClientWrappers/ClientMeetingScheduler";
+import ClientMeetingSchedule from "@/components/ClientWrappers/ClientMeetingSchedule";
 
 // Lazy load components with improved loading states and priority
 const ComparisonSection = dynamic(() => import("@/components/HomePage/sections/ComparisonSection"), {
@@ -21,20 +21,20 @@ const PricingSection = dynamic(() => import("@/components/HomePage/sections/Pric
 export default function Home() {
   const lg_screen_width = "lg:w-[75vw]";
   const default_screen_width = "w-[85vw]";
-
+  
   return (
     <div className="w-full">
       <HeroSection
         lg_screen_width={lg_screen_width}
         default_screen_width={default_screen_width}
       />
-
+      
       {/* Add priority to first visible sections */}
       <ComparisonSection
         lg_screen_width={lg_screen_width}
         default_screen_width={default_screen_width}
       />
-
+      
       {/* Use Suspense boundaries for better loading control */}
       <ClientOnly>
         <HighlightSection
@@ -42,7 +42,7 @@ export default function Home() {
           default_screen_width={default_screen_width}
         />
       </ClientOnly>
-
+      
       {/* Load below-the-fold content with lower priority */}
       <ClientOnly>
         <ClientQAWrapper
@@ -55,7 +55,7 @@ export default function Home() {
         />
         <ClientMeetingSchedule />
       </ClientOnly>
-
+      
       <PricingSection
         lg_screen_width={lg_screen_width}
         default_screen_width={default_screen_width}
