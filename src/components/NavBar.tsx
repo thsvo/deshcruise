@@ -1,6 +1,5 @@
 "use client"
 
-import { useRouter, usePathname } from "next/navigation";
 
 export default function NavBar({
   lg_screen_width,
